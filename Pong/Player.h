@@ -1,15 +1,15 @@
 #pragma once
-#include <SFML\Graphics.hpp>
+#include "Window.h"
 
 class Player
 {
 public:
-	Player(const sf::Vector2f& startPos);
+	Player(const int startX, const int startY);
 	~Player();
 
 	//bool IsColliding(const sf::Vector2f& pos);
 
-	void Draw(sf::RenderWindow& window) const;
+	void Draw(Window& window) const;
 	void Move(const sf::Vector2f& delta);
 	//void ClampToScreen();
 	sf::Vector2f GetPos() const;

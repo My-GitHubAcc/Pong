@@ -1,36 +1,23 @@
 #include "Player.h"
 
-Player::Player(const sf::Vector2f& startPos) :
+Player::Player(const int startX, const int startY) :
 	body(sf::RectangleShape(sf::Vector2f(30, 100)))
 {
-	body.setPosition(startPos);
+	body.setPosition(sf::Vector2f((float)startX, (float)startY));
 	body.setFillColor(sf::Color::White);
 }
 
 Player::~Player() {}
 
-//bool Player::IsColliding(const sf::Vector2f & pos)
-//{
-//
-//
-//	return false;
-//}
-
-void Player::Draw(sf::RenderWindow& window) const
+void Player::Draw(Window& window) const
 {
-	window.draw(body);
+	window.DrawShape(body);
 }
 
 void Player::Move(const sf::Vector2f& delta)
 {
 	body.move(delta * velocity);
 }
-
-//void Player::ClampToScreen()
-//{
-//	sf::Vector2f center = GetCenter();
-//
-//}
 
 sf::Vector2f Player::GetPos() const
 {
