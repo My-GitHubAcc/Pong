@@ -41,6 +41,12 @@ bool Window::isOpen()
 	return wnd->isOpen();
 }
 
+sf::Vector2f Window::GetSize() const
+{
+	sf::Vector2u size(wnd->getSize());
+	return sf::Vector2f((float)size.x, (float)size.y);
+}
+
 int Window::GetWidth() const
 {
 	return width;

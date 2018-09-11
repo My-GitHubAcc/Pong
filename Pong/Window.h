@@ -11,6 +11,8 @@ public:
 	void DrawShape(const sf::Shape& shape);
 	void Display();
 	bool isOpen();
+
+	sf::Vector2f GetSize() const;
 	int GetWidth() const;
 	int GetHeight() const;
 private:

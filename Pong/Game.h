@@ -9,9 +9,11 @@ public:
 	Game(const Window& window);
 
 	void Go();
+
+private:
 	void Update();
 	void Draw();
-private:
+
 	Pad padLeft, padRight;
 	Ball ball;
 	Window window;
