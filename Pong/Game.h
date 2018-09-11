@@ -12,7 +12,7 @@ public:
 	void Update();
 	void Draw();
 private:
-	Pad player;
+	Pad padLeft, padRight;
 	Ball ball;
 	Window window;
 };

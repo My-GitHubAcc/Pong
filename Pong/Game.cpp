@@ -2,7 +2,8 @@
 
 Game::Game(const Window& window)
 	: window(window),
-	player(Player(0, window.GetHeight()/2)),
+	padLeft(Pad(0.0f, (float)(window.GetHeight()/2))),
+	padRight(Pad((float)window.GetWidth(), (float)(window.GetHeight()/2))),
 	ball(Ball(window.GetWidth()/2, window.GetHeight()/2, 15))
 {
 }
@@ -33,12 +34,15 @@ void Game::Update()
 		{
 			delta = sf::Vector2f(0.0f, 1.0f);
 		}
-		player.Move(delta);
+		padLeft.Move(delta);
+		padLeft.ClampToScreen(window.GetHeight());
 	}
+
 }
 
 void Game::Draw()
 {
-	player.Draw(window);
+	padLeft.Draw(window);
+	padRight.Draw(window);
 	ball.Draw(window);
 }
