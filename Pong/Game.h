@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.h"
 #include "Player.h"
+#include "Ball.h"
 
 class Game
 {
@@ -12,6 +13,7 @@ public:
 	void Draw();
 private:
 	Player player;
+	Ball ball;
 	Window window;
 };
 

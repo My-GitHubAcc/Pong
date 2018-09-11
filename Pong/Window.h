@@ -16,5 +16,5 @@ public:
 private:
 	sf::RenderWindow *wnd;
 	int width, height;
-	char Title[];
+	char Title[10];
 };

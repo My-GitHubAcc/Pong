@@ -7,8 +7,6 @@ Player::Player(const int startX, const int startY) :
 	body.setFillColor(sf::Color::White);
 }
 
-Player::~Player() {}
-
 void Player::Draw(Window& window) const
 {
 	window.DrawShape(body);

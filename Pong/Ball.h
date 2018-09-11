@@ -1,17 +1,18 @@
 #pragma once
 #include "Window.h"
 
-class Player
+class Ball
 {
 public:
-	Player(const int startX, const int startY);
+	Ball(const int& startX, const int& startY, const float radius);
 
 	void Draw(Window& window) const;
 	void Move(const sf::Vector2f& delta);
 	sf::Vector2f GetPos() const;
 	sf::Vector2f GetCenter() const;
+
 private:
-	sf::RectangleShape body;
+	sf::CircleShape body;
 	static constexpr float velocity = 0.2f;
 };
 

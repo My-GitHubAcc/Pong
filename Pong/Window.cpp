@@ -1,7 +1,9 @@
 #include "Window.h"
 
 Window::Window(const int width, const int height, const char Title[]) :
-	wnd(new sf::RenderWindow(sf::VideoMode(width, height), Title))
+	wnd(new sf::RenderWindow(sf::VideoMode(width, height), Title)),
+	width(wnd->getSize().x),
+	height(wnd->getSize().y)
 {
 }
 
@@ -24,7 +26,7 @@ void Window::Clear()
 	wnd->clear(sf::Color::Black);
 }
 
-void Window::DrawShape(const sf::Shape & shape)
+void Window::DrawShape(const sf::Shape& shape)
 {
 	wnd->draw(shape);
 }

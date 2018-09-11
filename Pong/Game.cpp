@@ -2,7 +2,8 @@
 
 Game::Game(const Window& window)
 	: window(window),
-	player(Player(0, 300))
+	player(Player(0, window.GetHeight()/2)),
+	ball(Ball(window.GetWidth()/2, window.GetHeight()/2, 15))
 {
 }
 
@@ -39,4 +40,5 @@ void Game::Update()
 void Game::Draw()
 {
 	player.Draw(window);
+	ball.Draw(window);
 }
