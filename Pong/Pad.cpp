@@ -1,9 +1,9 @@
 #include "Pad.h"
 
-Pad::Pad(const int startX, const int startY) :
-	body(sf::RectangleShape(sf::Vector2f(30, 100)))
+Pad::Pad(const float startX, const float startY) :
+	body(sf::RectangleShape(sf::Vector2f(Pad::width, Pad::height)))
 {
-	body.setPosition(sf::Vector2f((float)startX, (float)startY));
+	body.setPosition(sf::Vector2f(startX, startY));
 	body.setFillColor(sf::Color::White);
 }
 
@@ -15,6 +15,20 @@ void Pad::Draw(Window& window) const
 void Pad::Move(const sf::Vector2f& delta)
 {
 	body.move(delta * velocity);
+}
+
+void Pad::ClampToScreen(const int windowHeight)
+{
+	const float top = GetPos().y,
+		bottom = GetPos().y + height;
+	if (top < 0)
+	{
+		body.setPosition(0.0f, 0.0f);
+	}
+	if (bottom >= windowHeight)
+	{
+		body.setPosition(0.0f, (float)(windowHeight - height));
+	}
 }
 
 sf::Vector2f Pad::GetPos() const
