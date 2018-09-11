@@ -1,10 +1,10 @@
 #pragma once
 #include "Window.h"
 
-class Player
+class Pad
 {
 public:
-	Player(const int startX, const int startY);
+	Pad(const int startX, const int startY);
 
 	void Draw(Window& window) const;
 	void Move(const sf::Vector2f& delta);
