@@ -11,7 +11,7 @@ public:
 	void ClampToScreen(const int windowHeight);
 
 	sf::Vector2f GetPos() const;
-	sf::Vector2f GetCenter() const;
+	//sf::Vector2f GetCenter() const;
 
 private:
 	sf::RectangleShape body;

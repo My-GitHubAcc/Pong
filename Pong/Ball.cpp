@@ -1,8 +1,7 @@
 #include "Ball.h"
-#include <iostream>
 
-Ball::Ball(const float startX, const float startY)
-	: body(sf::CircleShape(Ball::radius)),
+Ball::Ball(const float startX, const float startY) :
+	body(sf::CircleShape(Ball::radius)),
 	velocity(sf::Vector2f(1.0f, 1.0f))
 {
 	body.setPosition(sf::Vector2f(startX, startY));

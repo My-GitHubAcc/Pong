@@ -36,7 +36,7 @@ sf::Vector2f Pad::GetPos() const
 	return body.getPosition();
 }
 
-sf::Vector2f Pad::GetCenter() const
-{
-	return sf::Vector2f(body.getPosition().x + (body.getSize().x/2), body.getPosition().y + (body.getSize().y / 2));
-}
+//sf::Vector2f Pad::GetCenter() const
+//{
+//	return sf::Vector2f(body.getPosition().x + (body.getSize().x/2), body.getPosition().y + (body.getSize().y / 2));
+//}
