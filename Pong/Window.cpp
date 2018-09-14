@@ -43,8 +43,7 @@ bool Window::isOpen()
 
 sf::Vector2f Window::GetSize() const
 {
-	sf::Vector2u size(wnd->getSize());
-	return sf::Vector2f((float)size.x, (float)size.y);
+	return sf::Vector2f((float)width, (float)height);
 }
 
 int Window::GetWidth() const
