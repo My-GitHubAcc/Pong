@@ -44,5 +44,8 @@
     <ClInclude Include="Pad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

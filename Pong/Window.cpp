@@ -1,9 +1,8 @@
 #include "Window.h"
 
-Window::Window(const int width, const int height, const char Title[]) :
-	wnd(new sf::RenderWindow(sf::VideoMode(width, height), Title)),
-	width(wnd->getSize().x),
-	height(wnd->getSize().y)
+Window::Window(const Size& size, const char Title[]) :
+	size(size),
+	wnd(new sf::RenderWindow(sf::VideoMode(size.width, size.height), Title))
 {
 }
 
@@ -41,17 +40,7 @@ bool Window::isOpen()
 	return wnd->isOpen();
 }
 
-sf::Vector2f Window::GetSize() const
+Size Window::GetSize() const
 {
-	return sf::Vector2f((float)width, (float)height);
-}
-
-int Window::GetWidth() const
-{
-	return width;
-}
-
-int Window::GetHeight() const
-{
-	return height;
+	return size;
 }

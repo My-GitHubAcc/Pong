@@ -12,22 +12,22 @@ void Pad::Draw(Window& window) const
 	window.DrawShape(body);
 }
 
-void Pad::Move(const sf::Vector2f& delta)
+void Pad::Move(const sf::Vector2f& direction)
 {
-	body.move(delta * velocity);
+	body.move(direction * Pad::speed);
 }
 
 void Pad::ClampToScreen(const int windowHeight)
 {
 	const float top = GetPos().y,
-		bottom = GetPos().y + height;
+		bottom = GetPos().y + Pad::height;
 	if (top < 0)
 	{
 		body.setPosition(0.0f, 0.0f);
 	}
 	if (bottom >= windowHeight)
 	{
-		body.setPosition(0.0f, (float)(windowHeight - height));
+		body.setPosition(0.0f, (float)(windowHeight - Pad::height));
 	}
 }
 

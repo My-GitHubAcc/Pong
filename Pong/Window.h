@@ -1,10 +1,11 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include "Size.h"
 
 class Window
 {
 public:
-	Window(const int width, const int height, const char Title[]);
+	Window(const Size& size, const char Title[]);
 
 	void HandleEvents();
 	void Clear();
@@ -12,11 +13,9 @@ public:
 	void Display();
 	bool isOpen();
 
-	sf::Vector2f GetSize() const;
-	int GetWidth() const;
-	int GetHeight() const;
+	Size GetSize() const;
 private:
-	sf::RenderWindow *wnd;
-	int width, height;
+	Size size;
+	sf::RenderWindow* wnd;
 	char Title[10];
 };

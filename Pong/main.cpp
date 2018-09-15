@@ -2,8 +2,8 @@
 
 int main()
 {
-	int width = 1000, height = 600;
-	Game game = Game(Window(width, height, "Pong"));
+	int width = 720, height = 500;
+	Game game = Game(Window(Size(width, height), "Pong"));
 	game.Go();
 	return 0;
 }
