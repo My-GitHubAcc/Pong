@@ -17,5 +17,5 @@ public:
 private:
 	Size size;
 	sf::RenderWindow* wnd;
-	char Title[10];
+	//char Title[10];
 };

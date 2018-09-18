@@ -14,10 +14,9 @@ public:
 	static Size GetSize() { return Size(width, height); }
 
 private:
-	sf::RectangleShape body;
-	
 	static constexpr int width = 30;
 	static constexpr int height = 100;
 	static constexpr float speed = 0.4f;
+	sf::RectangleShape body;
 };
 
