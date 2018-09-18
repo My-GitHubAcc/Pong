@@ -3,7 +3,7 @@
 Game::Game(const Window& window)
 	: window(window),
 	padLeft(Pad(0.0f, (float)(window.GetSize().height/2))),
-	padRight(Pad((float)window.GetSize().width, (float)(window.GetSize().height /2))),
+	padRight(Pad((float)window.GetSize().width - Pad::GetSize().width, (float)(window.GetSize().height /2))),
 	ball(Ball(window.GetSize().width /2, window.GetSize().height /2))
 {
 }
@@ -35,16 +35,21 @@ void Game::Update()
 			delta = sf::Vector2f(0.0f, 1.0f);
 		}
 		padLeft.Move(delta);
+		padRight.Move(delta);
 		padLeft.ClampToScreen(window.GetSize().height);
+		padRight.ClampToScreen(window.GetSize().height);
 	}
 
-	//ball.Bounce(padLeft.GetPos());
+	if (ball.isColliding(padLeft.GetPos()) || ball.isColliding(padRight.GetPos()))
+	{
+		ball.Bounce();
+	}
 	ball.Move(window.GetSize());
 }
 
 void Game::Draw()
 {
 	padLeft.Draw(window);
-	/*padRight.Draw(window);*/
+	padRight.Draw(window);
 	ball.Draw(window);
 }
